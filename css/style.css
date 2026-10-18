@@ -36,6 +36,12 @@ a:focus-visible {
     color: var(--rosa);
 }
 
+/* Mostra claramente onde está o foco ao navegar pelo teclado */
+a:focus-visible {
+    outline: 3px solid var(--laranja);
+    outline-offset: 4px;
+}
+
 /* Cabeçalho e navegação */
 header {
     position: relative;
