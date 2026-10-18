@@ -217,6 +217,10 @@ main > article > img {
     object-fit: cover;
 }
 
+main > article > p {
+    max-width: 70ch;
+}
+
 main > article section {
     margin: 36px 0;
     padding: 24px;
@@ -239,6 +243,16 @@ main > article section:nth-of-type(4) {
 main > article ul {
     margin-bottom: 0;
     padding-left: 22px;
+}
+
+main > article section p:last-child {
+    margin-bottom: 0;
+}
+
+main > article > a {
+    display: inline-block;
+    margin-top: 8px;
+    font-weight: bold;
 }
 
 /* Página dos integrantes */
