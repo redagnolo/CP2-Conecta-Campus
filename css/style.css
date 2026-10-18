@@ -298,6 +298,15 @@ footer p {
 }
 
 @media (max-width: 560px) {
+    nav ul {
+        gap: 8px 16px;
+    }
+
+    nav a {
+        display: inline-block;
+        padding: 6px 0;
+    }
+
     main {
         width: min(100% - 32px, 1120px);
         padding: 40px 0 56px;
