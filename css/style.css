@@ -273,6 +273,14 @@ main > section:has(.integrante) > h2 {
     box-shadow: 0 6px 24px rgba(32, 31, 37, .08);
 }
 
+.integrante:nth-of-type(3n + 2) {
+    border-top-color: var(--rosa);
+}
+
+.integrante:nth-of-type(3n + 3) {
+    border-top-color: var(--azul);
+}
+
 .integrante img {
     width: 110px;
     height: 110px;
@@ -283,6 +291,10 @@ main > section:has(.integrante) > h2 {
 
 .integrante p {
     margin-bottom: 10px;
+}
+
+.integrante a {
+    overflow-wrap: anywhere;
 }
 
 /* Rodapé */
