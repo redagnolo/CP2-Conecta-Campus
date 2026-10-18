@@ -1,0 +1,307 @@
+/* Cores da identidade visual do Conecta Campus */
+:root {
+    --escuro: #201f25;
+    --roxo: #5f28f1;
+    --rosa: #f9265c;
+    --laranja: #fc9322;
+    --azul: #01beed;
+    --claro: #fffcfb;
+    --cinza: #f3f1f5;
+}
+
+/* Base da página */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    color: var(--escuro);
+    background: var(--claro);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: var(--roxo);
+}
+
+a:hover,
+a:focus-visible {
+    color: var(--rosa);
+}
+
+/* Cabeçalho e navegação */
+header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 20px max(24px, calc((100% - 1120px) / 2));
+    color: white;
+    background: var(--escuro);
+}
+
+header::after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    background: linear-gradient(to right, var(--azul) 25%, var(--roxo) 25% 50%, var(--rosa) 50% 75%, var(--laranja) 75%);
+    content: "";
+}
+
+header h1 {
+    position: relative;
+    margin: 0;
+    padding-left: 45px;
+    font-size: 1.2rem;
+    white-space: nowrap;
+}
+
+/* Pequena versão do símbolo colorido, feita apenas com CSS */
+header h1::before {
+    position: absolute;
+    top: 2px;
+    left: 9px;
+    width: 25px;
+    height: 27px;
+    background: var(--escuro);
+    border-left: 3px solid var(--laranja);
+    box-shadow: -3px 3px var(--rosa), -6px 6px var(--roxo), -9px 9px var(--azul);
+    content: "";
+}
+
+header h1::after {
+    position: absolute;
+    top: 0;
+    left: 19px;
+    color: white;
+    font-size: 1.35rem;
+    font-weight: bold;
+    content: "C";
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 28px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover,
+nav a:focus-visible {
+    color: var(--azul);
+}
+
+/* Área de conteúdo */
+main {
+    width: min(1120px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 64px 0 80px;
+}
+
+main section + section {
+    margin-top: 72px;
+}
+
+h2,
+h3 {
+    line-height: 1.2;
+}
+
+h2 {
+    margin: 0 0 20px;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+}
+
+h3 {
+    margin: 0 0 12px;
+    font-size: 1.25rem;
+}
+
+p {
+    margin: 0 0 18px;
+}
+
+/* Apresentação na página inicial */
+body:has(main > section:nth-child(2)) main > section:first-child {
+    padding: 60px 48px;
+    color: white;
+    background: linear-gradient(90deg, rgba(32, 31, 37, .94), rgba(32, 31, 37, .58)), url("../img/biblioteca.jpg") center / cover;
+}
+
+main > section:first-child > p {
+    max-width: 650px;
+    font-size: 1.1rem;
+}
+
+/* Cartões da página inicial e da lista de locais */
+main > section:nth-child(2),
+.lista-locais {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+main > section:nth-child(2) > h2,
+.lista-locais > h2,
+.lista-locais > p {
+    grid-column: 1 / -1;
+}
+
+main > section:nth-child(2) > article,
+.cartao-local {
+    overflow: hidden;
+    padding: 24px;
+    background: white;
+    border-bottom: 4px solid var(--roxo);
+    box-shadow: 0 6px 24px rgba(32, 31, 37, .08);
+}
+
+main > section:nth-child(2) > article:nth-of-type(3n + 2),
+.cartao-local:nth-of-type(3n + 2) {
+    border-bottom-color: var(--rosa);
+}
+
+main > section:nth-child(2) > article:nth-of-type(3n + 3),
+.cartao-local:nth-of-type(3n + 3) {
+    border-bottom-color: var(--azul);
+}
+
+main > section:nth-child(2) > article img,
+.cartao-local img {
+    width: 100%;
+    height: 190px;
+    margin-top: 20px;
+    object-fit: cover;
+}
+
+.categoria-local {
+    color: var(--roxo);
+    font-weight: bold;
+}
+
+/* Página de detalhes */
+main > article {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+main > article > img {
+    width: 100%;
+    max-height: 400px;
+    margin: 28px 0;
+    object-fit: cover;
+}
+
+main > article section {
+    margin: 36px 0;
+    padding: 24px;
+    background: var(--cinza);
+    border-left: 4px solid var(--roxo);
+}
+
+main > article section:nth-of-type(2) {
+    border-left-color: var(--rosa);
+}
+
+main > article section:nth-of-type(3) {
+    border-left-color: var(--azul);
+}
+
+main > article section:nth-of-type(4) {
+    border-left-color: var(--laranja);
+}
+
+main > article ul {
+    margin-bottom: 0;
+    padding-left: 22px;
+}
+
+/* Página dos integrantes */
+main > section:has(.integrante) {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+main > section:has(.integrante) > h2 {
+    grid-column: 1 / -1;
+}
+
+.integrante {
+    padding: 24px;
+    background: white;
+    border-top: 4px solid var(--roxo);
+    box-shadow: 0 6px 24px rgba(32, 31, 37, .08);
+}
+
+.integrante img {
+    width: 110px;
+    height: 110px;
+    margin: 18px 0;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.integrante p {
+    margin-bottom: 10px;
+}
+
+/* Rodapé */
+footer {
+    padding: 30px 24px;
+    color: white;
+    text-align: center;
+    background: var(--escuro);
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Ajustes para celular e tablet */
+@media (max-width: 800px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    main > section:nth-child(2),
+    .lista-locais,
+    main > section:has(.integrante) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 560px) {
+    main {
+        width: min(100% - 32px, 1120px);
+        padding: 40px 0 56px;
+    }
+
+    body:has(main > section:nth-child(2)) main > section:first-child {
+        padding: 42px 24px;
+    }
+
+    main > section:nth-child(2),
+    .lista-locais,
+    main > section:has(.integrante) {
+        grid-template-columns: 1fr;
+    }
+}
